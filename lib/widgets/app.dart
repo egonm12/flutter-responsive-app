@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_theme_extension_poc/theme/layout/breakpoints.dart';
-import 'package:flutter_theme_extension_poc/theme/theme.dart';
+import 'package:flutter_theme_extension_poc/theme/responsive_theme.dart';
 import 'package:flutter_theme_extension_poc/widgets/home.dart';
-
-
 
 class ResponsiveApp extends StatelessWidget {
   const ResponsiveApp({Key? key}) : super(key: key);
@@ -15,11 +13,11 @@ class ResponsiveApp extends StatelessWidget {
         late ThemeData themeData;
 
         if (constraints.maxWidth <= AppBreakpoints.small) {
-          themeData = AppTheme.small;
+          themeData = ResponsiveTheme.small;
         } else if (constraints.maxWidth <= AppBreakpoints.medium) {
-          themeData = AppTheme.medium;
+          themeData = ResponsiveTheme.medium;
         } else {
-          themeData = AppTheme.large;
+          themeData = ResponsiveTheme.large;
         }
 
         return MaterialApp(
